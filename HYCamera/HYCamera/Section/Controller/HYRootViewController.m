@@ -105,7 +105,6 @@
     [self.pCameraMonitor.layer setAffineTransform:CGAffineTransformMakeRotation(-M_PI/2.f)];
 }
 
-
 - (void)changeFrames:(NSNotification *)noti {
 //    self.pCameraMonitor.frame = [UIScreen mainScreen].bounds;
 }
