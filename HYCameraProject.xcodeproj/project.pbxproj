@@ -7,25 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3805193BDE9B6B89D3167F50 /* libPods-HYCameraProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC1E02FCAA8C775B11A6CF6 /* libPods-HYCameraProject.a */; };
 		5FC5CA2F21BA60A2005F5F7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5CA2E21BA60A2005F5F7B /* AppDelegate.m */; };
 		5FC5CA3221BA60A2005F5F7B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5CA3121BA60A2005F5F7B /* ViewController.m */; };
-		5FC5CA3521BA60A2005F5F7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC5CA3321BA60A2005F5F7B /* Main.storyboard */; };
 		5FC5CA3721BA60A3005F5F7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC5CA3621BA60A3005F5F7B /* Assets.xcassets */; };
 		5FC5CA3A21BA60A3005F5F7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC5CA3821BA60A3005F5F7B /* LaunchScreen.storyboard */; };
 		5FC5CA3D21BA60A3005F5F7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5CA3C21BA60A3005F5F7B /* main.m */; };
+		5FC5CB0E21BA8503005F5F7B /* HYCamera.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5FC5CB0D21BA8503005F5F7B /* HYCamera.bundle */; };
+		5FF4257421BA919D007695D4 /* HYCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF4255921BA85C6007695D4 /* HYCamera.framework */; };
+		5FF4257521BA919D007695D4 /* HYCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF4255921BA85C6007695D4 /* HYCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5FF4257621BA919D007695D4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5FF4257521BA919D007695D4 /* HYCamera.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		00E6AB2B150D10B9F4F51553 /* Pods-HYCameraProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCameraProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYCameraProject/Pods-HYCameraProject.debug.xcconfig"; sourceTree = "<group>"; };
 		5FC5CA2A21BA60A2005F5F7B /* HYCameraProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYCameraProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC5CA2D21BA60A2005F5F7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5FC5CA2E21BA60A2005F5F7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5FC5CA3021BA60A2005F5F7B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5FC5CA3121BA60A2005F5F7B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5FC5CA3421BA60A2005F5F7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FC5CA3621BA60A3005F5F7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FC5CA3921BA60A3005F5F7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FC5CA3B21BA60A3005F5F7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC5CA3C21BA60A3005F5F7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FC5CB0D21BA8503005F5F7B /* HYCamera.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HYCamera.bundle; sourceTree = "<group>"; };
+		5FF4255921BA85C6007695D4 /* HYCamera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HYCamera.framework; path = "Build/Products/Debug-iphoneos/HYCamera.framework"; sourceTree = SOURCE_ROOT; };
+		5FF4255B21BA9111007695D4 /* libSEP2P_AppSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSEP2P_AppSDK.a; path = HYCamera/HYCamera/libs/lib/libSEP2P_AppSDK.a; sourceTree = "<group>"; };
+		5FF4255C21BA9112007695D4 /* libSE_AudioCodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSE_AudioCodec.a; path = HYCamera/HYCamera/libs/lib/libSE_AudioCodec.a; sourceTree = "<group>"; };
+		5FF4255D21BA9112007695D4 /* libSE_VideoCodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSE_VideoCodec.a; path = HYCamera/HYCamera/libs/lib/libSE_VideoCodec.a; sourceTree = "<group>"; };
+		5FF4255E21BA9112007695D4 /* libSmartP2P_API.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSmartP2P_API.a; path = HYCamera/HYCamera/libs/lib/libSmartP2P_API.a; sourceTree = "<group>"; };
+		5FF4255F21BA9112007695D4 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = HYCamera/HYCamera/libs/lib/libavformat.a; sourceTree = "<group>"; };
+		5FF4256021BA9112007695D4 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = HYCamera/HYCamera/libs/lib/libavutil.a; sourceTree = "<group>"; };
+		5FF4256121BA9112007695D4 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = HYCamera/HYCamera/libs/lib/libavcodec.a; sourceTree = "<group>"; };
+		5FF4256221BA9112007695D4 /* libSE_MP4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSE_MP4.a; path = HYCamera/HYCamera/libs/lib/libSE_MP4.a; sourceTree = "<group>"; };
+		5FF4256321BA9112007695D4 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = HYCamera/HYCamera/libs/lib/libswresample.a; sourceTree = "<group>"; };
+		ECC1E02FCAA8C775B11A6CF6 /* libPods-HYCameraProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYCameraProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3501438C50FC5015B4FCC1 /* Pods-HYCameraProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCameraProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYCameraProject/Pods-HYCameraProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +63,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF4257421BA919D007695D4 /* HYCamera.framework in Frameworks */,
+				3805193BDE9B6B89D3167F50 /* libPods-HYCameraProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B6A488EBC2564DE69B49CC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00E6AB2B150D10B9F4F51553 /* Pods-HYCameraProject.debug.xcconfig */,
+				ED3501438C50FC5015B4FCC1 /* Pods-HYCameraProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5FC5CA2121BA60A2005F5F7B = {
 			isa = PBXGroup;
 			children = (
 				5FC5CA2C21BA60A2005F5F7B /* HYCameraProject */,
 				5FC5CA2B21BA60A2005F5F7B /* Products */,
+				1B6A488EBC2564DE69B49CC7 /* Pods */,
+				B69A19BF9046C681BEE7F13A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,17 +101,35 @@
 		5FC5CA2C21BA60A2005F5F7B /* HYCameraProject */ = {
 			isa = PBXGroup;
 			children = (
+				5FF4255921BA85C6007695D4 /* HYCamera.framework */,
+				5FC5CB0D21BA8503005F5F7B /* HYCamera.bundle */,
 				5FC5CA2D21BA60A2005F5F7B /* AppDelegate.h */,
 				5FC5CA2E21BA60A2005F5F7B /* AppDelegate.m */,
 				5FC5CA3021BA60A2005F5F7B /* ViewController.h */,
 				5FC5CA3121BA60A2005F5F7B /* ViewController.m */,
-				5FC5CA3321BA60A2005F5F7B /* Main.storyboard */,
 				5FC5CA3621BA60A3005F5F7B /* Assets.xcassets */,
 				5FC5CA3821BA60A3005F5F7B /* LaunchScreen.storyboard */,
 				5FC5CA3B21BA60A3005F5F7B /* Info.plist */,
 				5FC5CA3C21BA60A3005F5F7B /* main.m */,
 			);
 			path = HYCameraProject;
+			sourceTree = "<group>";
+		};
+		B69A19BF9046C681BEE7F13A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FF4256121BA9112007695D4 /* libavcodec.a */,
+				5FF4255F21BA9112007695D4 /* libavformat.a */,
+				5FF4256021BA9112007695D4 /* libavutil.a */,
+				5FF4255C21BA9112007695D4 /* libSE_AudioCodec.a */,
+				5FF4256221BA9112007695D4 /* libSE_MP4.a */,
+				5FF4255D21BA9112007695D4 /* libSE_VideoCodec.a */,
+				5FF4255B21BA9111007695D4 /* libSEP2P_AppSDK.a */,
+				5FF4255E21BA9112007695D4 /* libSmartP2P_API.a */,
+				5FF4256321BA9112007695D4 /* libswresample.a */,
+				ECC1E02FCAA8C775B11A6CF6 /* libPods-HYCameraProject.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FC5CA4021BA60A3005F5F7B /* Build configuration list for PBXNativeTarget "HYCameraProject" */;
 			buildPhases = (
+				5FFC36986D032E34641700F2 /* [CP] Check Pods Manifest.lock */,
 				5FC5CA2621BA60A2005F5F7B /* Sources */,
 				5FC5CA2721BA60A2005F5F7B /* Frameworks */,
 				5FC5CA2821BA60A2005F5F7B /* Resources */,
+				5FF4257621BA919D007695D4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +192,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC5CA3A21BA60A3005F5F7B /* LaunchScreen.storyboard in Resources */,
+				5FC5CB0E21BA8503005F5F7B /* HYCamera.bundle in Resources */,
 				5FC5CA3721BA60A3005F5F7B /* Assets.xcassets in Resources */,
-				5FC5CA3521BA60A2005F5F7B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FFC36986D032E34641700F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HYCameraProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5FC5CA2621BA60A2005F5F7B /* Sources */ = {
@@ -150,14 +238,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5FC5CA3321BA60A2005F5F7B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5FC5CA3421BA60A2005F5F7B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5FC5CA3821BA60A3005F5F7B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,35 +363,59 @@
 		};
 		5FC5CA4121BA60A3005F5F7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00E6AB2B150D10B9F4F51553 /* Pods-HYCameraProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76ABAVPT36;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphonesimulator",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = HYCameraProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HYCamera/HYCamera/libs/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.viomi.HYCameraProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5FC5CA4221BA60A3005F5F7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED3501438C50FC5015B4FCC1 /* Pods-HYCameraProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76ABAVPT36;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphonesimulator",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = HYCameraProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HYCamera/HYCamera/libs/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.viomi.HYCameraProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

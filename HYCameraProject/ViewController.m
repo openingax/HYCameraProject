@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <HYCamera/HYCamera.h>
 
 @interface ViewController ()
+
+@property(nonatomic,strong) HYCameraManager *cameraManager;
 
 @end
 
@@ -16,7 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor blueColor];
+    
+#if __has_feature(objc_arc)
+    HYConfig *config = [[HYConfig alloc] init];
+    config.deviceID = @"VIEW-1385328-HKXCK";
+    config.account = @"admin";
+    config.password = @"123456";
+    self.cameraManager = [[HYCameraManager alloc] initWithConfig:config];
+#endif
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.cameraManager showHYCameraWithcontroller:self];
 }
 
 
