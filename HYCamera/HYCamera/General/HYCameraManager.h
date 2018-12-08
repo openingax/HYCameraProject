@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "HYConfig.h"
 
+/* 屏幕旋转控制的通知名 */
+static NSString * const kHYCameraOrientationEvent = @"kHYCameraOrientationEvent";
+/* kHYCameraOrientationEvent 通知里 userInfo 字典的 key，根据这个 key 去取值 */
+static NSString * const kHYCameraOrientationKey = @"isLandScape";
+
 @interface HYCameraManager : NSObject
 
 - (instancetype)initWithConfig:(HYConfig *)config;

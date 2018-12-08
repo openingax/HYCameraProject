@@ -26,6 +26,7 @@
 @property (nonatomic, retain) KYLWifiObject *selectedWifiObject;
 
 @property (nonatomic, copy) NSString *strDID;
-@property (nonatomic, retain)  UIImageView *imgViewShowVideo;
+@property (nonatomic, retain) UIImageView *imgViewShowVideo;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 @end

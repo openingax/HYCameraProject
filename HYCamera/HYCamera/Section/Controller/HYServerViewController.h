@@ -11,8 +11,9 @@
 #import <AudioToolbox/AudioFile.h>
 #include <AudioToolbox/AudioQueue.h>
 #include <AudioToolbox/AudioServices.h>
-
+#import <Masonry/Masonry.h>
 #import "KYLCamera.h"
+#import "HYMarco.h"
 
 @class HYConfig;
 

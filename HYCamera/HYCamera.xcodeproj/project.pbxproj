@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4460126FFCB7F5FF6E877C8F /* libPods-HYCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9E8EAD8F12F9FE0F6176E1 /* libPods-HYCamera.a */; };
+		5F06F65A21BAC9FD004419DC /* HYMarco.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F06F65921BAC9FD004419DC /* HYMarco.h */; };
+		5F06F65D21BAD4EE004419DC /* UIDevice+Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F06F65B21BAD4EE004419DC /* UIDevice+Orientation.h */; };
+		5F06F65E21BAD4EE004419DC /* UIDevice+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F06F65C21BAD4EE004419DC /* UIDevice+Orientation.m */; };
+		5F06F66F21BB684F004419DC /* HYCameraHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F06F66D21BB684F004419DC /* HYCameraHelper.h */; };
+		5F06F67021BB684F004419DC /* HYCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F06F66E21BB684F004419DC /* HYCameraHelper.m */; };
 		5FC5CA5221BA624C005F5F7B /* HYCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA5021BA624C005F5F7B /* HYCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC5CAA621BA62AB005F5F7B /* KYLCurrentPlayRecordInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA5B21BA62AA005F5F7B /* KYLCurrentPlayRecordInfo.h */; };
 		5FC5CAA721BA62AB005F5F7B /* KYLDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA5C21BA62AA005F5F7B /* KYLDeviceInfo.h */; };
@@ -93,6 +98,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F06F65921BAC9FD004419DC /* HYMarco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYMarco.h; sourceTree = "<group>"; };
+		5F06F65B21BAD4EE004419DC /* UIDevice+Orientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Orientation.h"; sourceTree = "<group>"; };
+		5F06F65C21BAD4EE004419DC /* UIDevice+Orientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Orientation.m"; sourceTree = "<group>"; };
+		5F06F66D21BB684F004419DC /* HYCameraHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCameraHelper.h; sourceTree = "<group>"; };
+		5F06F66E21BB684F004419DC /* HYCameraHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYCameraHelper.m; sourceTree = "<group>"; };
 		5FC5CA4D21BA624C005F5F7B /* HYCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HYCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC5CA5021BA624C005F5F7B /* HYCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCamera.h; sourceTree = "<group>"; };
 		5FC5CA5121BA624C005F5F7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -368,12 +378,17 @@
 		5FC5CA9121BA62AB005F5F7B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				5F06F65921BAC9FD004419DC /* HYMarco.h */,
+				5F06F66D21BB684F004419DC /* HYCameraHelper.h */,
+				5F06F66E21BB684F004419DC /* HYCameraHelper.m */,
 				5FC5CAF921BA65BF005F5F7B /* HYCameraManager.h */,
 				5FC5CAFA21BA65BF005F5F7B /* HYCameraManager.m */,
 				5FC5CAFD21BA6602005F5F7B /* HYBaseNavigationController.h */,
 				5FC5CAFE21BA6602005F5F7B /* HYBaseNavigationController.m */,
 				5FC5CB0121BA664A005F5F7B /* HYConfig.h */,
 				5FC5CB0221BA664A005F5F7B /* HYConfig.m */,
+				5F06F65B21BAD4EE004419DC /* UIDevice+Orientation.h */,
+				5F06F65C21BAD4EE004419DC /* UIDevice+Orientation.m */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -433,6 +448,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F06F66F21BB684F004419DC /* HYCameraHelper.h in Headers */,
 				5FC5CAC421BA62AB005F5F7B /* KYLMontiorTouchProtocol.h in Headers */,
 				5FC5CAFB21BA65BF005F5F7B /* HYCameraManager.h in Headers */,
 				5FC5CB0321BA664A005F5F7B /* HYConfig.h in Headers */,
@@ -451,6 +467,7 @@
 				5FC5CABC21BA62AB005F5F7B /* KYLRemoteRecordPlayProtocol.h in Headers */,
 				5FC5CAD521BA62AB005F5F7B /* KYLRemoteRecordPlayImageProtocol.h in Headers */,
 				5FC5CAAC21BA62AB005F5F7B /* KYLRecordFileInfo.h in Headers */,
+				5F06F65A21BAC9FD004419DC /* HYMarco.h in Headers */,
 				5FC5CAC921BA62AB005F5F7B /* KYLDefine.h in Headers */,
 				5FC5CAD421BA62AB005F5F7B /* KYLSearchProtocol.h in Headers */,
 				5FC5CAA621BA62AB005F5F7B /* KYLCurrentPlayRecordInfo.h in Headers */,
@@ -462,6 +479,7 @@
 				5FC5CB0B21BA6CEF005F5F7B /* HYServerViewController.h in Headers */,
 				5FC5CAD321BA62AB005F5F7B /* KYLSetCameraParamsProtocol.h in Headers */,
 				5FC5CAB421BA62AB005F5F7B /* KYLComFunUtil.h in Headers */,
+				5F06F65D21BAD4EE004419DC /* UIDevice+Orientation.h in Headers */,
 				5FC5CABA21BA62AB005F5F7B /* HYRootViewController.h in Headers */,
 				5FC5CADA21BA62AB005F5F7B /* SEP2P_Define.h in Headers */,
 				5FC5CAC721BA62AB005F5F7B /* KYLEventProtocol.h in Headers */,
@@ -581,6 +599,7 @@
 				5FC5CABD21BA62AB005F5F7B /* KYLCircleBuf.mm in Sources */,
 				5FC5CACB21BA62AB005F5F7B /* KYLSearchTool.m in Sources */,
 				5FC5CAB921BA62AB005F5F7B /* HYRootViewController.m in Sources */,
+				5F06F67021BB684F004419DC /* HYCameraHelper.m in Sources */,
 				5FC5CAD121BA62AB005F5F7B /* KYLCameraMonitor.m in Sources */,
 				5FC5CAB821BA62AB005F5F7B /* PCMRecorder.mm in Sources */,
 				5FC5CB0021BA6602005F5F7B /* HYBaseNavigationController.m in Sources */,
@@ -591,6 +610,7 @@
 				5FC5CAB721BA62AB005F5F7B /* KYLLocalMP4FilePlayer.cpp in Sources */,
 				5FC5CB0421BA664A005F5F7B /* HYConfig.m in Sources */,
 				5FC5CAA921BA62AB005F5F7B /* KYLRecordFileInfo.m in Sources */,
+				5F06F65E21BAD4EE004419DC /* UIDevice+Orientation.m in Sources */,
 				5FC5CAB021BA62AB005F5F7B /* KYLComFunUtil.m in Sources */,
 				5FC5CAAF21BA62AB005F5F7B /* KYLOpenALPlayer.m in Sources */,
 				5FC5CAAA21BA62AB005F5F7B /* KYLDeviceInfo.m in Sources */,
