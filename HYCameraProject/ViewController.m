@@ -14,6 +14,7 @@
 @interface ViewController ()
 
 @property(nonatomic,strong) HYCameraManager *cameraManager;
+@property(nonatomic,assign) BOOL hasShowCameraVC;
 
 @end
 
@@ -54,6 +55,7 @@
 }
 
 - (void)showCameraVC {
+    self.hasShowCameraVC = YES;
     [self.cameraManager showHYCameraWithcontroller:self];
 }
 

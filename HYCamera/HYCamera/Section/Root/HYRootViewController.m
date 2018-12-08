@@ -7,6 +7,8 @@
 //
 
 #import <MBProgressHUD.h>
+#import <libextobjc/EXTScope.h>
+#import <AVFoundation/AVAudioSession.h>
 
 #import "HYRootViewController.h"
 #import "KYLDeviceInfo.h"
@@ -15,14 +17,29 @@
 #import "HYCameraManager.h"
 #import "UIDevice+Orientation.h"
 #import "HYCameraHelper.h"
+#import "HYCameraSettingViewController.h"
+#import "HYResolutionRatioView.h"
 
 #define KYL_CAMERA_DID @"KYL_CAMERA_DID"
-#define kButtonSize 24
+#define KYL_CAMERA_USE_TIPS @"KYL_CAMERA_USE_TIPS"
+
+#define kNavButtonSize 24
+#define kFunctionButtonSize 36
 
 @interface HYRootViewController ()
 {
     CGRect oldMonitorRect;
+    BOOL hasConnectCamera;
+    
+    BOOL hasEnableVoice;
+    BOOL hasEnablePhone;
+    BOOL hasShowRatioView;
 }
+
+@property(nonatomic,retain) UIButton *voiceBtn;
+@property(nonatomic,retain) UIButton *phoneBtn;
+@property(nonatomic,retain) UIButton *resolutionRatioBtn;
+@property(nonatomic,retain) HYResolutionRatioView *resolutionRatioView;
 
 @end
 
@@ -52,14 +69,12 @@
     return [[NSUserDefaults standardUserDefaults] valueForKey:KYL_CAMERA_DID];
 }
 
-
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
-    self.navigationController.navigationBar.hidden = YES;
     
     [self initTheData];
     [self initTheUI];
@@ -72,7 +87,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kHYCameraOrientationEvent object:nil userInfo:@{kHYCameraOrientationKey: @(YES)}];
     [UIDevice switchNewOrientation:UIInterfaceOrientationLandscapeRight];
@@ -80,20 +94,32 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self connectCamera];
+    if (hasConnectCamera && [self.m_pCamera getCameraStatus] == CONNECT_STATUS_CONNECTED) {
+        [self startVideo];
+    } else {
+        [self connectCamera];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self stopVideo];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)HYHiddenNavigatorBar {
+    
+}
+
+- (void)changeFrames:(NSNotification *)noti {
+    
 }
 
 // 当 VC 在 NavigationController 里时，下面这个设置导航栏的方法不起作用
@@ -115,7 +141,7 @@
     CGRect rect;
     
     CGFloat height = MIN(kScreenWidth, kScreenHeight);
-    CGFloat width = kIsiPhoneX ? floor(16*height/9) : MAX(kScreenWidth, kScreenHeight);
+    CGFloat width = kIsiPhoneX ? floor(18*height/9) : MAX(kScreenWidth, kScreenHeight);
     if (kIsiPhoneX) {
         rect = CGRectMake((MAX(kScreenWidth, kScreenHeight) - width) / 2, 0, width, height);
     } else {
@@ -164,53 +190,82 @@
     /* 按钮 */
     UIButton *backBtn = [[UIButton buttonWithType:UIButtonTypeCustom] autorelease];
     [backBtn setImage:[UIImage imageWithBundleAsset:@"ym_nav_back"] forState:UIControlStateNormal];
-    backBtn.bounds = CGRectMake(0, 0, kButtonSize, kButtonSize);
+    backBtn.bounds = CGRectMake(0, 0, kNavButtonSize, kNavButtonSize);
     [backBtn addTarget:self action:@selector(exitAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
     [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(kNavButtonSize, kNavButtonSize));
         make.centerY.equalTo(self.titleLabel.mas_centerY);
         make.left.equalTo(self.view).with.offset(kIsiPhoneX ? 54 : 20);
     }];
     
     UIButton *moreBtn = [[UIButton buttonWithType:UIButtonTypeCustom] autorelease];
     [moreBtn setImage:[UIImage imageWithBundleAsset:@"ym_nav_back"] forState:UIControlStateNormal];
-    moreBtn.bounds = CGRectMake(0, 0, kButtonSize, kButtonSize);
+    moreBtn.bounds = CGRectMake(0, 0, kNavButtonSize, kNavButtonSize);
     [moreBtn addTarget:self action:@selector(moreAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:moreBtn];
     [moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(kNavButtonSize, kNavButtonSize));
         make.centerY.equalTo(self.titleLabel.mas_centerY);
         make.right.equalTo(self.view).with.offset(kIsiPhoneX ? -54 : -20);
     }];
+    
+    self.voiceBtn = [[UIButton buttonWithType:UIButtonTypeCustom] autorelease];
+    [self.voiceBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+    self.voiceBtn.bounds = CGRectMake(0, 0, kFunctionButtonSize, kFunctionButtonSize);
+    self.voiceBtn.layer.cornerRadius = kFunctionButtonSize/2.f;
+    self.voiceBtn.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    [self.voiceBtn addTarget:self action:@selector(voiceAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.voiceBtn];
+    [self.voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(kFunctionButtonSize, kFunctionButtonSize));
+        make.left.equalTo(self.view).with.offset(kIsiPhoneX ? 54 : 20);
+        make.bottom.equalTo(self.view).with.offset(-13);
+    }];
+    
+    self.phoneBtn = [[UIButton buttonWithType:UIButtonTypeCustom] autorelease];
+    [self.phoneBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+    self.phoneBtn.bounds = CGRectMake(0, 0, kFunctionButtonSize, kFunctionButtonSize);
+    self.phoneBtn.layer.cornerRadius = kFunctionButtonSize/2.f;
+    self.phoneBtn.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    [self.phoneBtn addTarget:self action:@selector(phoneAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.phoneBtn];
+    [self.phoneBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(kFunctionButtonSize, kFunctionButtonSize));
+        make.left.equalTo(self.voiceBtn.mas_right).with.offset(16);
+        make.centerY.equalTo(self.voiceBtn.mas_centerY);
+    }];
+    
+    self.resolutionRatioBtn = [[UIButton buttonWithType:UIButtonTypeCustom] autorelease];
+    [self.resolutionRatioBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+    self.resolutionRatioBtn.bounds = CGRectMake(0, 0, kFunctionButtonSize, kFunctionButtonSize);
+    self.resolutionRatioBtn.layer.cornerRadius = kFunctionButtonSize/2.f;
+    self.resolutionRatioBtn.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    [self.resolutionRatioBtn addTarget:self action:@selector(resolutionRatioAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.resolutionRatioBtn];
+    [self.resolutionRatioBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(kFunctionButtonSize, kFunctionButtonSize));
+        make.right.equalTo(self.view).with.offset(kIsiPhoneX ? -54 : -20);
+        make.centerY.equalTo(self.voiceBtn.mas_centerY);
+    }];
+    
+    self.resolutionRatioView = [[HYResolutionRatioView alloc] init];
+    self.resolutionRatioView.hidden = YES;
+    [self.view addSubview:self.resolutionRatioView];
+    [self.resolutionRatioView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view);
+        make.right.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(kIsiPhoneX ? 200 : 186, kScreenHeight));
+    }];
+    
+    BOOL hasShowTips = [[[NSUserDefaults standardUserDefaults] objectForKey:KYL_CAMERA_USE_TIPS] boolValue];
+    if (!hasShowTips) {
+        
+    }
 }
 
 - (void)showConnFailedView {
     
-}
-
-- (void)changeFrames:(NSNotification *)noti {
-//    self.pCameraMonitor.frame = [UIScreen mainScreen].bounds;
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    
-    if (size.width > size.height) {
-        // 横屏设置
-        
-    } else {
-        // 竖屏设置
-    }
-}
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationMaskPortrait) {
-        // 竖屏布局
-//        [self.pCameraMonitor.layer setAffineTransform:CGAffineTransformMakeRotation(-M_PI/2.f)];
-    } else {
-        // 横屏布局
-        [self.pCameraMonitor.layer setAffineTransform:CGAffineTransformMakeRotation(0)];
-    }
 }
 
 - (void)connectCamera {
@@ -264,6 +319,13 @@
     
     if (nRet == 0) {
         
+        // 这里设置三个功能按键的显示状态
+        int voiceStatus = [self.m_pCamera getAudioStatus];
+        int phoneStatus = [self.m_pCamera getTalkStatus];
+        int resolutionType = self.m_pCamera.m_nCameraResolution;
+        
+        
+        
     } else {
         
     }
@@ -278,15 +340,118 @@
     }
 }
 
+#pragma mark - KYLMontiorTouchProtocol
+- (void)KYLMontiorTouchProtocolDidGestureOneTap:(void *)pUser {
+    if (!self.resolutionRatioView.isHidden) {
+        [self.resolutionRatioView hide];
+    }
+}
+
 #pragma mark - Action
 - (void)exitAction {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kHYCameraOrientationEvent object:nil userInfo:@{kHYCameraOrientationKey: @(NO)}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kHYCameraOrientationEvent object:nil userInfo:@{kHYCameraOrientationKey: @(NO)}];
     [UIDevice switchNewOrientation:UIInterfaceOrientationPortrait];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)moreAction {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kHYCameraOrientationEvent object:nil userInfo:@{kHYCameraOrientationKey: @(NO)}];
+    [UIDevice switchNewOrientation:UIInterfaceOrientationPortrait];
+    HYCameraSettingViewController *settingVC = [[HYCameraSettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
+    [settingVC autorelease];
+}
+
+- (void)voiceAction {
+    if (self.m_pCamera == nil) return;
     
+    int nRet = -1;
+    
+    if (!hasEnableVoice) {
+        if ([self.m_pCamera getCameraStatus] == CONNECT_STATUS_CONNECTED) {
+            nRet = [self.m_pCamera startAudio];
+            if (nRet == 0) {
+                hasEnableVoice = YES;
+                NSLog(@"打开了语音功能");
+                [self.voiceBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+            }
+        }
+    } else {
+        nRet = [self.m_pCamera stopAudio];
+        if (nRet == 1) {
+            hasEnableVoice = NO;
+            NSLog(@"关闭了语音功能");
+            [self.voiceBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+        }
+    }
+}
+
+- (void)phoneAction {
+    if (self.m_pCamera == nil) return;
+    
+    if (![self canRecord]) return;
+    
+    int nRet = -1;
+    if (!hasEnablePhone) {
+        if ([self.m_pCamera getCameraStatus] == CONNECT_STATUS_CONNECTED) {
+            nRet = [self.m_pCamera startTalk];
+            if (nRet == 0) {
+                hasEnablePhone = YES;
+                [self.phoneBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+            } else {
+                NSLog(@"打开实时对讲功能失败");
+            }
+        }
+    } else {
+        nRet = [self.m_pCamera stopTalk];
+        if (nRet == 0) {
+            hasEnablePhone = NO;
+            [self.phoneBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+        }
+    }
+}
+
+- (void)resolutionRatioAction {
+    if (self.m_pCamera == nil) return;
+    
+    if (hasShowRatioView) {
+//        [self.resolutionRatioView hide];
+        self.resolutionRatioView.hidden = YES;
+    } else {
+        @weakify(self);
+        self.resolutionRatioView.hidden = NO;
+        [self.resolutionRatioView showWithSelectedIdx:self.m_pCamera.m_nCameraResolution Complete:^(BOOL hasSelected, HYResolutionRatioType type) {
+            @strongify(self);
+            if (!hasSelected) return;
+            
+            int result = [self.m_pCamera setTheCameraResolutionParams:self.strDID resolution:(int)type];
+            if (result >= 0) {
+                NSLog(@"设置成功");
+                if (type == HYResolutionRatioType1080) {
+                    [self.resolutionRatioBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+                } else if (type == HYResolutionRatioType480) {
+                    [self.resolutionRatioBtn setImage:[UIImage imageWithBundleAsset:@""] forState:UIControlStateNormal];
+                }
+                
+            } else {
+                
+            }
+        }];
+    }
+}
+
+- (BOOL)canRecord {
+    __block BOOL bCanRecord = YES;
+    
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
+            [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+                bCanRecord = granted;
+            }];
+        }
+    }
+    return bCanRecord;
 }
 
 #pragma mark -
@@ -351,7 +516,7 @@
         case CONNECT_STATUS_CONNECTED:
         {
             sttStatus = @"connected";
-            
+            hasConnectCamera = YES;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self startVideo];
             });

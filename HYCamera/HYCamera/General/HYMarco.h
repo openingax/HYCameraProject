@@ -10,7 +10,7 @@
 #define HYMarco_h
 
 #define kIsiPhoneX ([UIScreen mainScreen].bounds.size.width == 375 && [UIScreen mainScreen].bounds.size.height == 812) || ([UIScreen mainScreen].bounds.size.width == 414 && [UIScreen mainScreen].bounds.size.height == 896) || ([UIScreen mainScreen].bounds.size.width == 812 && [UIScreen mainScreen].bounds.size.height == 375) || ([UIScreen mainScreen].bounds.size.width == 896 && [UIScreen mainScreen].bounds.size.height == 414)
-#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kScreenWidth  MAX([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight MIN([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width)
 
 #endif /* HYMarco_h */

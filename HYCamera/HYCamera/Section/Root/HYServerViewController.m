@@ -25,7 +25,7 @@
         self.account = config.account;
         self.password = config.password;
         
-        self.view.backgroundColor = [UIColor blackColor];
+        // init 时不要设置 view 的背影色等与 view 相关的属性，否则它会调用 viewDidLoad 的方法，即使没 present 这个 VC
     }
     return self;
 }

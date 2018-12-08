@@ -8,3 +8,6 @@
 ### 错误处理：
 1、如果跑项目报 `Image not found` 的错误，需要在主工程的 Embedded Binaries 里添加 `HYCamera.framework`
 参见：https://stackoverflow.com/questions/24993752/os-x-framework-library-not-loaded-image-not-found
+
+
+### 工程记得打开麦克风权限，在 infoList 里添加 `Privacy - Microphone Usage Description` 并设为 YES
