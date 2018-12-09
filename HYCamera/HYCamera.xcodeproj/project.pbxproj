@@ -13,6 +13,9 @@
 		5F06F65E21BAD4EE004419DC /* UIDevice+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F06F65C21BAD4EE004419DC /* UIDevice+Orientation.m */; };
 		5F06F66F21BB684F004419DC /* HYCameraHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F06F66D21BB684F004419DC /* HYCameraHelper.h */; };
 		5F06F67021BB684F004419DC /* HYCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F06F66E21BB684F004419DC /* HYCameraHelper.m */; };
+		5FB7B06921BC1BBC00C30857 /* HYWiFiConfigViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FB7B06721BC1BBC00C30857 /* HYWiFiConfigViewController.h */; };
+		5FB7B06A21BC1BBC00C30857 /* HYWiFiConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB7B06821BC1BBC00C30857 /* HYWiFiConfigViewController.m */; };
+		5FB7B06C21BC1BD100C30857 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB7B06B21BC1BD100C30857 /* SystemConfiguration.framework */; };
 		5FC5CA5221BA624C005F5F7B /* HYCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA5021BA624C005F5F7B /* HYCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC5CAA621BA62AB005F5F7B /* KYLCurrentPlayRecordInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA5B21BA62AA005F5F7B /* KYLCurrentPlayRecordInfo.h */; };
 		5FC5CAA721BA62AB005F5F7B /* KYLDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA5C21BA62AA005F5F7B /* KYLDeviceInfo.h */; };
@@ -114,6 +117,9 @@
 		5F06F65C21BAD4EE004419DC /* UIDevice+Orientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Orientation.m"; sourceTree = "<group>"; };
 		5F06F66D21BB684F004419DC /* HYCameraHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCameraHelper.h; sourceTree = "<group>"; };
 		5F06F66E21BB684F004419DC /* HYCameraHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYCameraHelper.m; sourceTree = "<group>"; };
+		5FB7B06721BC1BBC00C30857 /* HYWiFiConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYWiFiConfigViewController.h; sourceTree = "<group>"; };
+		5FB7B06821BC1BBC00C30857 /* HYWiFiConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYWiFiConfigViewController.m; sourceTree = "<group>"; };
+		5FB7B06B21BC1BD100C30857 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5FC5CA4D21BA624C005F5F7B /* HYCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HYCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC5CA5021BA624C005F5F7B /* HYCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCamera.h; sourceTree = "<group>"; };
 		5FC5CA5121BA624C005F5F7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB7B06C21BC1BD100C30857 /* SystemConfiguration.framework in Frameworks */,
 				5FF425A021BBA80A007695D4 /* AVFoundation.framework in Frameworks */,
 				5FC5CAF621BA630D005F5F7B /* libiconv.tbd in Frameworks */,
 				5FC5CAF421BA6306005F5F7B /* libbz2.1.0.tbd in Frameworks */,
@@ -248,6 +255,7 @@
 		3E8ACD7BDA6984D566C9484C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FB7B06B21BC1BD100C30857 /* SystemConfiguration.framework */,
 				5FF4259F21BBA80A007695D4 /* AVFoundation.framework */,
 				5FC5CAF521BA630D005F5F7B /* libiconv.tbd */,
 				5FC5CAF321BA6306005F5F7B /* libbz2.1.0.tbd */,
@@ -260,6 +268,35 @@
 				6B9E8EAD8F12F9FE0F6176E1 /* libPods-HYCamera.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FB7B06421BC1B7E00C30857 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FF4258921BB7C57007695D4 /* HYCameraSettingViewController.h */,
+				5FF4258A21BB7C57007695D4 /* HYCameraSettingViewController.m */,
+				5FB7B06721BC1BBC00C30857 /* HYWiFiConfigViewController.h */,
+				5FB7B06821BC1BBC00C30857 /* HYWiFiConfigViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FB7B06521BC1B8A00C30857 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FF4259721BB7E2D007695D4 /* HYCameraSettingItemView.h */,
+				5FF4259821BB7E2D007695D4 /* HYCameraSettingItemView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FB7B06621BC1B8F00C30857 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FF4259B21BB8276007695D4 /* HYSettingCellModel.h */,
+				5FF4259C21BB8276007695D4 /* HYSettingCellModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5FC5CA4321BA624C005F5F7B = {
@@ -443,12 +480,9 @@
 		5FF4258521BB7BD7007695D4 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				5FF4259B21BB8276007695D4 /* HYSettingCellModel.h */,
-				5FF4259C21BB8276007695D4 /* HYSettingCellModel.m */,
-				5FF4259721BB7E2D007695D4 /* HYCameraSettingItemView.h */,
-				5FF4259821BB7E2D007695D4 /* HYCameraSettingItemView.m */,
-				5FF4258921BB7C57007695D4 /* HYCameraSettingViewController.h */,
-				5FF4258A21BB7C57007695D4 /* HYCameraSettingViewController.m */,
+				5FB7B06621BC1B8F00C30857 /* Model */,
+				5FB7B06521BC1B8A00C30857 /* View */,
+				5FB7B06421BC1B7E00C30857 /* Controller */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -537,6 +571,7 @@
 				5FC5CACD21BA62AB005F5F7B /* KYLCameraPushFunctionSetProtocol.h in Headers */,
 				5FC5CAA721BA62AB005F5F7B /* KYLDeviceInfo.h in Headers */,
 				5FC5CAC521BA62AB005F5F7B /* KYLRemoteRecordProtocol.h in Headers */,
+				5FB7B06921BC1BBC00C30857 /* HYWiFiConfigViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +682,7 @@
 				5FF4258421BB7A65007695D4 /* UIImage+HYColor.m in Sources */,
 				5FC5CAAB21BA62AB005F5F7B /* KYLCurrentPlayRecordInfo.m in Sources */,
 				5FC5CAC021BA62AB005F5F7B /* KYLCamera.mm in Sources */,
+				5FB7B06A21BC1BBC00C30857 /* HYWiFiConfigViewController.m in Sources */,
 				5FC5CAAE21BA62AB005F5F7B /* APICommon.mm in Sources */,
 				5FC5CAB721BA62AB005F5F7B /* KYLLocalMP4FilePlayer.cpp in Sources */,
 				5FC5CB0421BA664A005F5F7B /* HYConfig.m in Sources */,

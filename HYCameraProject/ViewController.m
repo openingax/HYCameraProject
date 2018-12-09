@@ -10,6 +10,7 @@
 #import <HYCamera/HYCamera.h>
 #import "AppDelegate.h"
 #import <Masonry.h>
+#import <SystemConfiguration/CaptiveNetwork.h>
 
 @interface ViewController ()
 
@@ -42,6 +43,15 @@
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.view);
     }];
+    
+    UIButton *wifiBtn = [[UIButton alloc] init];
+    [wifiBtn setTitle:@"获取 Wi-Fi 信息" forState:UIControlStateNormal];
+    [wifiBtn addTarget:self action:@selector(fetchWiFiInfo) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:wifiBtn];
+    [wifiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(btn.mas_bottom).with.offset(16);
+        make.centerX.equalTo(self.view);
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -57,6 +67,30 @@
 - (void)showCameraVC {
     self.hasShowCameraVC = YES;
     [self.cameraManager showHYCameraWithcontroller:self];
+}
+
+- (void)fetchWiFiInfo {
+    NSDictionary *wifi = nil;
+    CFArrayRef wifiInterfaces = CNCopySupportedInterfaces();
+    
+    NSArray *interfaces = (__bridge NSArray *)wifiInterfaces;
+    
+    for (NSString *interfaceName in interfaces) {
+        CFDictionaryRef dictRef = CNCopyCurrentNetworkInfo((__bridge CFStringRef)(interfaceName));
+        
+        if (dictRef) {
+            NSDictionary *networkInfo = (__bridge NSDictionary *)dictRef;
+            NSLog(@"network info -> %@", networkInfo);
+            
+            wifi = networkInfo;
+            
+            CFRelease(dictRef);
+        }
+    }
+    CFRelease(wifiInterfaces);
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@", wifi] delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alertView show];
 }
 
 @end

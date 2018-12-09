@@ -15,7 +15,7 @@ NSString * HYLocalizedString(NSString *key, NSString *comment)
 
 @implementation HYCameraHelper
 
-+ (NSBundle *)timServerBundle {
++ (NSBundle *)hyCameraBundle {
     return [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"HYCamera" ofType:@"bundle"]];
 }
 
@@ -38,7 +38,7 @@ NSString * HYLocalizedString(NSString *key, NSString *comment)
 @implementation UIImage (Bundle)
 
 + (UIImage *)imageWithBundleAsset:(NSString *)assetName {
-    NSBundle *timServerBundle = [HYCameraHelper timServerBundle];
+    NSBundle *timServerBundle = [HYCameraHelper hyCameraBundle];
     
     if (timServerBundle && assetName) {
         return [UIImage imageWithContentsOfFile:[[timServerBundle resourcePath] stringByAppendingPathComponent:[@"Images/" stringByAppendingString: assetName]]];
