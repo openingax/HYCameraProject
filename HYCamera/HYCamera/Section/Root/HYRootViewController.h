@@ -11,7 +11,6 @@
 #import "KYLCamera.h"
 #import "KYLCameraProtocol.h"
 #import "KYLSearchProtocol.h"
-#import "KYLSearchTool.h"
 #import "KYLCameraMonitor.h"
 
 @class KYLWifiObject;

@@ -66,13 +66,6 @@
 		5FC5CAD421BA62AB005F5F7B /* KYLSearchProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA8E21BA62AB005F5F7B /* KYLSearchProtocol.h */; };
 		5FC5CAD521BA62AB005F5F7B /* KYLRemoteRecordPlayImageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA8F21BA62AB005F5F7B /* KYLRemoteRecordPlayImageProtocol.h */; };
 		5FC5CAD621BA62AB005F5F7B /* KYLImageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA9021BA62AB005F5F7B /* KYLImageProtocol.h */; };
-		5FC5CAD721BA62AB005F5F7B /* SE_AudioCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA9421BA62AB005F5F7B /* SE_AudioCodec.h */; };
-		5FC5CAD821BA62AB005F5F7B /* mp4.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA9521BA62AB005F5F7B /* mp4.h */; };
-		5FC5CAD921BA62AB005F5F7B /* SEP2P_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA9621BA62AB005F5F7B /* SEP2P_API.h */; };
-		5FC5CADA21BA62AB005F5F7B /* SEP2P_Define.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA9721BA62AB005F5F7B /* SEP2P_Define.h */; };
-		5FC5CADB21BA62AB005F5F7B /* SEP2P_Error.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA9821BA62AB005F5F7B /* SEP2P_Error.h */; };
-		5FC5CADC21BA62AB005F5F7B /* SEP2P_Type.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA9921BA62AB005F5F7B /* SEP2P_Type.h */; };
-		5FC5CADD21BA62AB005F5F7B /* SE_VideoCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC5CA9A21BA62AB005F5F7B /* SE_VideoCodec.h */; };
 		5FC5CADE21BA62AB005F5F7B /* libSE_AudioCodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC5CA9C21BA62AB005F5F7B /* libSE_AudioCodec.a */; };
 		5FC5CADF21BA62AB005F5F7B /* libSE_MP4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC5CA9D21BA62AB005F5F7B /* libSE_MP4.a */; };
 		5FC5CAE021BA62AB005F5F7B /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC5CA9E21BA62AB005F5F7B /* libavutil.a */; };
@@ -109,6 +102,15 @@
 		5FF425A021BBA80A007695D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF4259F21BBA80A007695D4 /* AVFoundation.framework */; };
 		5FF425A321BBAB66007695D4 /* HYResolutionRatioView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425A121BBAB66007695D4 /* HYResolutionRatioView.h */; };
 		5FF425A421BBAB66007695D4 /* HYResolutionRatioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF425A221BBAB66007695D4 /* HYResolutionRatioView.m */; };
+		5FF425E521BE5B11007695D4 /* SE_AudioCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425DE21BE5B11007695D4 /* SE_AudioCodec.h */; };
+		5FF425E621BE5B11007695D4 /* mp4.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425DF21BE5B11007695D4 /* mp4.h */; };
+		5FF425E721BE5B11007695D4 /* SEP2P_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425E021BE5B11007695D4 /* SEP2P_API.h */; };
+		5FF425E821BE5B11007695D4 /* SEP2P_Define.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425E121BE5B11007695D4 /* SEP2P_Define.h */; };
+		5FF425E921BE5B11007695D4 /* SEP2P_Error.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425E221BE5B11007695D4 /* SEP2P_Error.h */; };
+		5FF425EA21BE5B11007695D4 /* SEP2P_Type.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425E321BE5B11007695D4 /* SEP2P_Type.h */; };
+		5FF425EB21BE5B11007695D4 /* SE_VideoCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425E421BE5B11007695D4 /* SE_VideoCodec.h */; };
+		5FF425EE21BE5C3C007695D4 /* HYSearchTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF425EC21BE5C3C007695D4 /* HYSearchTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF425EF21BE5C3C007695D4 /* HYSearchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF425ED21BE5C3C007695D4 /* HYSearchTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,13 +175,6 @@
 		5FC5CA8E21BA62AB005F5F7B /* KYLSearchProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYLSearchProtocol.h; sourceTree = "<group>"; };
 		5FC5CA8F21BA62AB005F5F7B /* KYLRemoteRecordPlayImageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYLRemoteRecordPlayImageProtocol.h; sourceTree = "<group>"; };
 		5FC5CA9021BA62AB005F5F7B /* KYLImageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYLImageProtocol.h; sourceTree = "<group>"; };
-		5FC5CA9421BA62AB005F5F7B /* SE_AudioCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SE_AudioCodec.h; sourceTree = "<group>"; };
-		5FC5CA9521BA62AB005F5F7B /* mp4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mp4.h; sourceTree = "<group>"; };
-		5FC5CA9621BA62AB005F5F7B /* SEP2P_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEP2P_API.h; sourceTree = "<group>"; };
-		5FC5CA9721BA62AB005F5F7B /* SEP2P_Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEP2P_Define.h; sourceTree = "<group>"; };
-		5FC5CA9821BA62AB005F5F7B /* SEP2P_Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEP2P_Error.h; sourceTree = "<group>"; };
-		5FC5CA9921BA62AB005F5F7B /* SEP2P_Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEP2P_Type.h; sourceTree = "<group>"; };
-		5FC5CA9A21BA62AB005F5F7B /* SE_VideoCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SE_VideoCodec.h; sourceTree = "<group>"; };
 		5FC5CA9C21BA62AB005F5F7B /* libSE_AudioCodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSE_AudioCodec.a; sourceTree = "<group>"; };
 		5FC5CA9D21BA62AB005F5F7B /* libSE_MP4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSE_MP4.a; sourceTree = "<group>"; };
 		5FC5CA9E21BA62AB005F5F7B /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
@@ -216,6 +211,15 @@
 		5FF4259F21BBA80A007695D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5FF425A121BBAB66007695D4 /* HYResolutionRatioView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYResolutionRatioView.h; sourceTree = "<group>"; };
 		5FF425A221BBAB66007695D4 /* HYResolutionRatioView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYResolutionRatioView.m; sourceTree = "<group>"; };
+		5FF425DE21BE5B11007695D4 /* SE_AudioCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SE_AudioCodec.h; sourceTree = "<group>"; };
+		5FF425DF21BE5B11007695D4 /* mp4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mp4.h; sourceTree = "<group>"; };
+		5FF425E021BE5B11007695D4 /* SEP2P_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEP2P_API.h; sourceTree = "<group>"; };
+		5FF425E121BE5B11007695D4 /* SEP2P_Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEP2P_Define.h; sourceTree = "<group>"; };
+		5FF425E221BE5B11007695D4 /* SEP2P_Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEP2P_Error.h; sourceTree = "<group>"; };
+		5FF425E321BE5B11007695D4 /* SEP2P_Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEP2P_Type.h; sourceTree = "<group>"; };
+		5FF425E421BE5B11007695D4 /* SE_VideoCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SE_VideoCodec.h; sourceTree = "<group>"; };
+		5FF425EC21BE5C3C007695D4 /* HYSearchTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYSearchTool.h; sourceTree = "<group>"; };
+		5FF425ED21BE5C3C007695D4 /* HYSearchTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYSearchTool.m; sourceTree = "<group>"; };
 		6B9E8EAD8F12F9FE0F6176E1 /* libPods-HYCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYCamera.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F60E95B6DA5CA0029D338EC /* Pods-HYCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCamera.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HYCamera/Pods-HYCamera.debug.xcconfig"; sourceTree = "<group>"; };
 		92C4E9CB81842A34E346160A /* Pods-HYCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCamera.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HYCamera/Pods-HYCamera.release.xcconfig"; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 				5F06F65C21BAD4EE004419DC /* UIDevice+Orientation.m */,
 				5FF4258121BB7A65007695D4 /* UIImage+HYColor.h */,
 				5FF4258221BB7A65007695D4 /* UIImage+HYColor.m */,
+				5FF425EC21BE5C3C007695D4 /* HYSearchTool.h */,
+				5FF425ED21BE5C3C007695D4 /* HYSearchTool.m */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -441,24 +447,10 @@
 		5FC5CA9221BA62AB005F5F7B /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				5FC5CA9321BA62AB005F5F7B /* Include */,
+				5FF425DD21BE5B11007695D4 /* include */,
 				5FC5CA9B21BA62AB005F5F7B /* lib */,
 			);
 			path = libs;
-			sourceTree = "<group>";
-		};
-		5FC5CA9321BA62AB005F5F7B /* Include */ = {
-			isa = PBXGroup;
-			children = (
-				5FC5CA9421BA62AB005F5F7B /* SE_AudioCodec.h */,
-				5FC5CA9521BA62AB005F5F7B /* mp4.h */,
-				5FC5CA9621BA62AB005F5F7B /* SEP2P_API.h */,
-				5FC5CA9721BA62AB005F5F7B /* SEP2P_Define.h */,
-				5FC5CA9821BA62AB005F5F7B /* SEP2P_Error.h */,
-				5FC5CA9921BA62AB005F5F7B /* SEP2P_Type.h */,
-				5FC5CA9A21BA62AB005F5F7B /* SE_VideoCodec.h */,
-			);
-			path = Include;
 			sourceTree = "<group>";
 		};
 		5FC5CA9B21BA62AB005F5F7B /* lib */ = {
@@ -500,6 +492,20 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		5FF425DD21BE5B11007695D4 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5FF425DE21BE5B11007695D4 /* SE_AudioCodec.h */,
+				5FF425DF21BE5B11007695D4 /* mp4.h */,
+				5FF425E021BE5B11007695D4 /* SEP2P_API.h */,
+				5FF425E121BE5B11007695D4 /* SEP2P_Define.h */,
+				5FF425E221BE5B11007695D4 /* SEP2P_Error.h */,
+				5FF425E321BE5B11007695D4 /* SEP2P_Type.h */,
+				5FF425E421BE5B11007695D4 /* SE_VideoCodec.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		E86E18D5A1DF872E53453D4C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,14 +525,16 @@
 				5F06F66F21BB684F004419DC /* HYCameraHelper.h in Headers */,
 				5FC5CAC421BA62AB005F5F7B /* KYLMontiorTouchProtocol.h in Headers */,
 				5FC5CAFB21BA65BF005F5F7B /* HYCameraManager.h in Headers */,
+				5FF425EE21BE5C3C007695D4 /* HYSearchTool.h in Headers */,
+				5FC5CABB21BA62AB005F5F7B /* KYLSearchTool.h in Headers */,
 				5FC5CB0321BA664A005F5F7B /* HYConfig.h in Headers */,
 				5FC5CAC321BA62AB005F5F7B /* KYLSnapPictureProtocol.h in Headers */,
+				5FF425E921BE5B11007695D4 /* SEP2P_Error.h in Headers */,
 				5FC5CACA21BA62AB005F5F7B /* KYLCameraProtocol.h in Headers */,
 				5FC5CAB521BA62AB005F5F7B /* KYLLocalMP4FilePlayerProtocol.h in Headers */,
 				5FC5CAB121BA62AB005F5F7B /* KYLLocalMP4FilePlayer.h in Headers */,
 				5FF4258B21BB7C57007695D4 /* HYCameraSettingViewController.h in Headers */,
 				5FC5CAFF21BA6602005F5F7B /* HYBaseNavigationController.h in Headers */,
-				5FC5CAD921BA62AB005F5F7B /* SEP2P_API.h in Headers */,
 				5FF425A321BBAB66007695D4 /* HYResolutionRatioView.h in Headers */,
 				5FC5CAD621BA62AB005F5F7B /* KYLImageProtocol.h in Headers */,
 				5FC5CAB321BA62AB005F5F7B /* PCMRecorder.h in Headers */,
@@ -542,30 +550,29 @@
 				5F06F65A21BAC9FD004419DC /* HYMarco.h in Headers */,
 				5FC5CAC921BA62AB005F5F7B /* KYLDefine.h in Headers */,
 				5FC5CAD421BA62AB005F5F7B /* KYLSearchProtocol.h in Headers */,
+				5FF425E821BE5B11007695D4 /* SEP2P_Define.h in Headers */,
 				5FC5CAA621BA62AB005F5F7B /* KYLCurrentPlayRecordInfo.h in Headers */,
 				5FC5CAD021BA62AB005F5F7B /* KYLCircleBuf.h in Headers */,
-				5FC5CADB21BA62AB005F5F7B /* SEP2P_Error.h in Headers */,
-				5FC5CAD721BA62AB005F5F7B /* SE_AudioCodec.h in Headers */,
-				5FC5CADD21BA62AB005F5F7B /* SE_VideoCodec.h in Headers */,
 				5FF4259D21BB8276007695D4 /* HYSettingCellModel.h in Headers */,
 				5FC5CAAD21BA62AB005F5F7B /* KYLWifiObject.h in Headers */,
+				5FF425EA21BE5B11007695D4 /* SEP2P_Type.h in Headers */,
 				5FC5CB0B21BA6CEF005F5F7B /* HYServerViewController.h in Headers */,
 				5FC5CAD321BA62AB005F5F7B /* KYLSetCameraParamsProtocol.h in Headers */,
 				5FC5CAB421BA62AB005F5F7B /* KYLComFunUtil.h in Headers */,
 				5F06F65D21BAD4EE004419DC /* UIDevice+Orientation.h in Headers */,
 				5FC5CABA21BA62AB005F5F7B /* HYRootViewController.h in Headers */,
-				5FC5CADA21BA62AB005F5F7B /* SEP2P_Define.h in Headers */,
 				5FC5CAC721BA62AB005F5F7B /* KYLEventProtocol.h in Headers */,
-				5FC5CADC21BA62AB005F5F7B /* SEP2P_Type.h in Headers */,
+				5FF425E621BE5B11007695D4 /* mp4.h in Headers */,
+				5FF425E521BE5B11007695D4 /* SE_AudioCodec.h in Headers */,
 				5FC5CAC621BA62AB005F5F7B /* KYLSetEmailProtocol.h in Headers */,
-				5FC5CABB21BA62AB005F5F7B /* KYLSearchTool.h in Headers */,
-				5FC5CAD821BA62AB005F5F7B /* mp4.h in Headers */,
 				5FC5CACC21BA62AB005F5F7B /* KYLSetSDCardScheduleProtocol.h in Headers */,
 				5FC5CAC121BA62AB005F5F7B /* KYLCamera.h in Headers */,
 				5FC5CAC821BA62AB005F5F7B /* KYLSetFTPInfoProtocol.h in Headers */,
 				5FC5CAB221BA62AB005F5F7B /* KYLOpenALPlayer.h in Headers */,
 				5FC5CACF21BA62AB005F5F7B /* KYLSetWifiProtocol.h in Headers */,
+				5FF425E721BE5B11007695D4 /* SEP2P_API.h in Headers */,
 				5FC5CABF21BA62AB005F5F7B /* KYLDeviceStatusChangedProtocol.h in Headers */,
+				5FF425EB21BE5B11007695D4 /* SE_VideoCodec.h in Headers */,
 				5FC5CA5221BA624C005F5F7B /* HYCamera.h in Headers */,
 				5FC5CABE21BA62AB005F5F7B /* KYLSetUserInfoProtocol.h in Headers */,
 				5FC5CACD21BA62AB005F5F7B /* KYLCameraPushFunctionSetProtocol.h in Headers */,
@@ -670,6 +677,7 @@
 			files = (
 				5FC5CAFC21BA65BF005F5F7B /* HYCameraManager.m in Sources */,
 				5FC5CAA821BA62AB005F5F7B /* KYLWifiObject.m in Sources */,
+				5FF425EF21BE5C3C007695D4 /* HYSearchTool.m in Sources */,
 				5FC5CABD21BA62AB005F5F7B /* KYLCircleBuf.mm in Sources */,
 				5FC5CACB21BA62AB005F5F7B /* KYLSearchTool.m in Sources */,
 				5FC5CAB921BA62AB005F5F7B /* HYRootViewController.m in Sources */,
@@ -835,6 +843,15 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/HYCamera/libs/include",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"$(PROJECT_DIR)/build/include",
+				);
 				INFOPLIST_FILE = HYCamera/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -883,6 +900,15 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/HYCamera/libs/include",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"$(PROJECT_DIR)/build/include",
+				);
 				INFOPLIST_FILE = HYCamera/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

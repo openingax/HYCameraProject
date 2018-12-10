@@ -11,11 +11,13 @@
 #import "AppDelegate.h"
 #import <Masonry.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
+#import <HYCamera/HYSearchTool.h>
 
-@interface ViewController ()
+@interface ViewController () <HYSearchToolDelegate>
 
 @property(nonatomic,strong) HYCameraManager *cameraManager;
 @property(nonatomic,assign) BOOL hasShowCameraVC;
+@property(nonatomic,strong) HYSearchTool *searchTool;
 
 @end
 
@@ -34,6 +36,9 @@
     config.account = @"admin";
     config.password = @"123456";
     self.cameraManager = [[HYCameraManager alloc] initWithConfig:config];
+    
+    self.searchTool = [[HYSearchTool alloc] init];
+    self.searchTool.delegate = self;
 #endif
     
     UIButton *btn = [[UIButton alloc] init];
@@ -50,6 +55,15 @@
     [self.view addSubview:wifiBtn];
     [wifiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(btn.mas_bottom).with.offset(16);
+        make.centerX.equalTo(self.view);
+    }];
+    
+    UIButton *searchBtn = [[UIButton alloc] init];
+    [searchBtn setTitle:@"开始搜索" forState:UIControlStateNormal];
+    [searchBtn addTarget:self action:@selector(searchDeviceInfo) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:searchBtn];
+    [searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(wifiBtn.mas_bottom).with.offset(16);
         make.centerX.equalTo(self.view);
     }];
 }
@@ -91,6 +105,16 @@
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@", wifi] delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alertView show];
+}
+
+- (void)searchDeviceInfo {
+    [self.searchTool startSearch];
+}
+
+- (void)didSucceedSearchOneDevice:(NSString *)chDID ip:(NSString *)ip port:(int)port devName:(NSString *)devName macaddress:(NSString *)mac productType:(NSString *)productType {
+    if ([chDID isEqualToString:@"VIEW-1385328-HKXCK"]) {
+        [self.searchTool stopSearch];
+    }
 }
 
 @end
